@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>The Ages</title>
+        <style>
+                body{background-color: #fce5cd; align-items: center;}
+                #theage{float: left; text-align: center; top: 30px;position:relative; color: #351c75; font-weight: lighter; width: 100%; font-size: 50px;}
+                #ment1{ float: left; text-align: center; position: relative; top: 22px; font-size: 15px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
+                #ment2{float: left; text-align: center; position: relative; top: 10px;;  font-size: 15px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
+                .Rectangle-3{width: 330px; height: 70px; background-color: #f7d7b5; position: absolute; left: 50%; top: 230px; transform: translate(-50%,-50%); border-radius: 10px; }
+                #textbox{position: absolute; top: 11px; left: 10px;}
+                #textbox1{position: absolute; top: 38px; left: 10px;}
+
+                #myagebtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px; height: 48px;position: absolute; top: 11px; left: 150px;box-shadow: 2px 2px 2px gray;}
+            #mydogbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px;height: 48px;position: absolute; top: 11px;left: 208px;box-shadow: 2px 2px 2px gray;}
+            #mycatbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px; height: 48px;position: absolute; top: 11px; left: 266px;box-shadow: 2px 2px 2px gray;}
+
+            #myagebtn:hover{color: #fff;background-color: #FFC078;}
+            #mydogbtn:hover{color: #fff;background-color: #FFC078;}
+            #mycatbtn:hover{color: #fff;background-color: #FFC078;}
+
+            #myagebtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;}
+            #mydogbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
+            #mycatbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
+
+            .Rectangle-4 {width: 394px; height: 450px;background-color: #fce5cd;position: absolute; left: 50%; top: 500px; transform: translate(-50%,-50%);}
+            #manage{position: absolute; left: 20px; top: 5px;animation-name: test; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
+            #myage{position: absolute;left: 17px; top: -28px;;letter-spacing: 3px; animation-name: test; animation-duration: 1s; animation-direction: alternate; font-size: 60px;}
+            #dogage{position: absolute;top: 320px;left:500px;letter-spacing: 3px;visibility: hidden;}
+            #catage{position: absolute;top: 320px;left:500px;letter-spacing: 3px;visibility: hidden;}
+
+            #isit{position: absolute;top: 59px;left: 375px;animation-name: test; animation-duration: 1s; animation-direction: alternate; font-size: 15px}
+            #born{position: absolute;top: 85px;left: 20px;animation-name: test; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
+            #dat{position: absolute;top:50px; left: 15px;animation-name: test; animation-duration: 1s; animation-direction: alternate; font-size: 60px;}
+            #dat1{position: absolute; top: 138px; left: 190px;animation-name: test; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
+
+            #dog1{position: absolute; top: 165px;left: 20px;visibility: hidden;font-size: 15px;}
+            #dog2{position: absolute; top: 125px;left: 15px;visibility: hidden; font-size: 60px;}
+            #dog3{position: absolute; top: 230px;left: 20px;visibility: hidden; font-size: 15px;}
+            #dog4{position: absolute; top: 256px;left: 15px;visibility: hidden; font-size: 10px;}
+            #dog5{position: absolute; top: 270px;left: 15px;visibility: hidden; font-size: 10px;}
+
+            #cat1{position: absolute; top: 165px;left:20px;visibility: hidden;font-size: 15px;}
+            #cat2{position: absolute; top: 125px;left: 15px;visibility: hidden; font-size: 60px;}
+            #cat3{position: absolute; top: 230px;left: 20px;visibility: hidden;font-size: 15px;}
+            #cat4{position: absolute; top: 260px;left: 15px;visibility: hidden;}
+
+            #notice_square{width:100%; height: 40px; background-color: #351c75; position: absolute; top: 400px;left: -420px;}
+            #notice1{position: absolute; top: 440px;left: 5px;}
+            #notice2{position: absolute; top: 415px;left: 5px;}
+
+
+
+            
+                
+            
+            @media screen and (min-width: 750px){
+                
+                body{background-color: #fce5cd;align-items: center;}
+                #theage{float: left; text-align: center; top: 63px;position:relative; color: #351c75; font-weight: lighter; width: 100%; font-size: 70px;}
+                #ment1{ float: left; text-align: center; position: relative; top: 50px; font-size: 20px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
+                #ment2{float: left; text-align: center; position: relative; top: 30px;;  font-size: 20px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
+                .Rectangle-3 {width: 235px; height: 70px; margin: 0 6px 0 0; padding: 8px 62.3px 4px 70.4px; border-radius: 20px; background-color: #f7d7b5;position: absolute; left: 50%; top: 320px; transform: translate(-50%,-50%); }
+
+            #textbox{position: absolute;top: 16px;left: 17px;}
+            #textbox1{position: absolute; top: 43px; left: 17px;}
+            #manage{position: absolute; left: 47px; top: 0px;animation-name: age; animation-duration: 1s; animation-direction: alternate; font-size: 22px;}
+            #myage{position: absolute;left: 40px; top: -60px;;letter-spacing: 3px; animation-name: age; animation-duration: 1s; animation-direction: alternate;font-size: 95px;}
+            #dogage{position: absolute;top: 320px;left:460px;letter-spacing: 3px;visibility: hidden;}
+            #catage{position: absolute;top: 320px;left:460px;letter-spacing: 3px;visibility: hidden;}
+
+            #myagebtn{border: 0px; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 16px; left: 160px;box-shadow: 2px 2px 2px gray;}
+            #mydogbtn{border: 0px ; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 16px;left: 228px;box-shadow: 2px 2px 2px gray;}
+            #mycatbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 16px; left: 296px;box-shadow: 2px 2px 2px gray;}
+
+            #myagebtn:hover{color: white;background-color: #FFC078;}
+            #mydogbtn:hover{color: #fff;background-color: #FFC078;}
+            #mycatbtn:hover{color: #fff;background-color: #FFC078;}
+
+            #myagebtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;}
+            #mydogbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
+            #mycatbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
+
+            #dog1{position: absolute; top: 204px;left: 44px;visibility: hidden; font-size: 22px;}
+            #dog2{position: absolute; top: 170px;left: 44px;visibility: hidden; font-size: 70px;}
+            #dog3{position: absolute; top: 260px;left: 470px;visibility: hidden; font-size: 22px;}
+            #dog4{position: absolute; top: 320px;left: 44px;visibility: hidden; font-size: 10px;}
+            #dog5{position: absolute; top: 308px;left: 44px;visibility: hidden; font-size: 10px;}
+
+            #cat1{position: absolute; top: 204px;left: 44px;visibility: hidden;font-size: 22px;}
+            #cat2{position: absolute; top: 170px;left: 44px;visibility: hidden; font-size: 70px;}
+            #cat3{position: absolute; top: 260px;left: 460px;visibility: hidden;font-size: 22px;}
+            #cat4{position: absolute; top: 308px;left: 44px;visibility: hidden;}
+
+            #notice1{position: absolute; top: 423px;left: 115px;}
+            #notice2{position: absolute; top: 410px;left: 100px;}
+
+            @keyframes age{
+                from{
+                    left: -1000px;
+                }
+                to{
+                    margin-left: 0;
+                }
+            }
+            @keyframes dat{
+                from{
+                    margin-left: 0px;
+                }
+                to{
+                    margin-left: -1200px;
+                }
+            }
+
+            #isit{position: absolute;top: 77px;left: 600px;animation-name: age; animation-duration: 1s; animation-direction: alternate; font-size: 22px}
+            #born{position: absolute;top: 115px;left: 1244px;animation-name: dat; animation-fill-mode: forwards; animation-duration: 1s; animation-direction: alternate; font-size: 22px;}
+            #dat{position: absolute;top: 80px; left: 1244px;animation-name: dat; animation-fill-mode: forwards;  animation-duration: 1s; animation-direction: alternate; font-size: 70px;}
+            #dat1{position: absolute; top: 170px; left: 1450px;animation-name: dat; animation-fill-mode: forwards; animation-duration: 1s; animation-direction: alternate;width: 100%; font-size: 22px;}
+
+            .Rectangle-4 {width: 660px; height: 450px;background-color: #fce5cd;position: absolute; left: 50%; top: 600px; transform: translate(-50%,-50%); border-top-left-radius: 20px; border-top-right-radius: 20px;}}
+
+        </style>
+        <script>
+            function cosname(){
+                const name =document.getElementById('textbox1').value;
+                if(name.length==0){
+                    document.getElementById('manage').innerText="만 나이는";
+                }
+                else{
+                    document.getElementById('manage').innerText=name;
+                }
+                
+            }
+            function printage(){
+            const birthdate=document.getElementById('textbox').value;
+            const birthdates =birthdate.split(".");
+            //input.split --> birthdates 변수 안에 리스트로 저장됨
+            if (birthdate!=birthdates[0]+'.'+birthdates[1]+'.'+birthdates[2] || birthdates[0]<100){
+                document.getElementById("myage").innerText="00.00000000";
+                document.getElementById("dat").innerText="00000";
+                document.getElementById("dog2").innerText="00.00000000";
+                document.getElementById("cat2").innerText="00.00000000";
+            }
+            else{
+                var AAA=birthdates[0]+"-"+birthdates[1]+"-"+birthdates[2]+" 00:00:00"
+
+                const birthtime=new Date(AAA);
+                const todaytime=new Date();
+
+                var difdat = 505-(Math.floor(birthdates[0]/4))//윤년계산
+            
+                var yoon = difdat*86400000
+
+                const diff = (birthtime - todaytime)*-1-yoon;
+
+                var actage = Math.round(diff*100000000/31536000000)/100000000.0;//8번째 자리까지 출력
+
+                var actdat = Math.floor(diff/86400000)
+                document.getElementById("myage").innerText=actage;
+                document.getElementById("dat").innerText=actdat+difdat+1;
+
+                var dogage = 16*Math.log(actage)+31
+                var dogage_1=Math.round(dogage*100000000)/100000000.0;
+
+                var catage30=diff*0.00000000039
+                var catage_30=Math.round(catage30*100000000)/100000000.0;
+
+                var catage60=1+(diff-2592000000*1)*0.00000000087
+                var catage_60=Math.round(catage60*100000000)/100000000.0;
+
+                var catage90=3+(diff-2592000000*2)*0.00000000087
+                var catage_90=Math.round(catage90*100000000)/100000000.0;
+
+                var catage120=5+(diff-2592000000*3)*0.00000000039
+                var catage_120=Math.round(catage120*100000000)/100000000.0;
+
+                var catage150=6+(diff-2592000000*4)*0.00000000078
+                var catage_150=Math.round(catage150*100000000)/100000000.0;
+
+                var catage180=8+(diff-2592000000*5)*0.00000000039
+                var catage_180=Math.round(catage180*100000000)/100000000.0;
+
+                var catage360=9+(diff-2592000000*6)*0.00000000039
+                var catage_360=Math.round(catage360*100000000)/100000000.0;
+
+                var catage720=15+(diff-2592000000*12)*0.00000000029
+                var catage_720=Math.round(catage720*100000000)/100000000.0;
+
+                var catageelse=24+(diff-2592000000*24)*0.00000000013
+                var catage_else=Math.round(catageelse*100000000)/100000000.0;
+
+                if (actdat<30){
+                    document.getElementById("cat2").innerText=(catage_30);
+                }
+                else if (actdat<60){
+                    document.getElementById("cat2").innerText=(catage_60);
+                }
+                else if (actdat<90){
+                    document.getElementById("cat2").innerText=(catage_90);
+                }
+                else if (actdat<120){
+                    document.getElementById("cat2").innerText=(catage_120);
+                }
+                else if (actdat<150){
+                    document.getElementById("cat2").innerText=(catage_150);
+                }
+                else if (actdat<180){
+                    document.getElementById("cat2").innerText=(catage_180);
+                }                
+                else if (actdat<360){
+                    document.getElementById("cat2").innerText=(catage_360);
+                }
+                else if (actdat<720){
+                    document.getElementById("cat2").innerText=(catage_720);       
+                }
+                else{
+                    document.getElementById("cat2").innerText=(catage_else);       
+                }
+
+                if (actage<0){
+                    document.getElementById("myage").innerText="00.00000000";
+                    document.getElementById("dat").innerText="00000";
+                    document.getElementById("dog2").innerText="00.00000000";
+                    document.getElementById("cat2").innerText="00.00000000";
+                }
+                else if (dogage_1<0){
+                    document.getElementById("dog2").innerText="00.00000000";
+
+
+                }
+                else{
+                    document.getElementById("dog2").innerText=dogage_1;
+                }
+            }
+            
+            }
+            function myage(){
+                    document.getElementById("dog1").style.visibility="hidden";
+                    document.getElementById("dog2").style.visibility="hidden";
+                    document.getElementById("dog3").style.visibility="hidden";
+                    document.getElementById("dog4").style.visibility="hidden";
+                    document.getElementById("dog5").style.visibility="hidden";
+
+
+                    document.getElementById("cat1").style.visibility="hidden";
+                    document.getElementById("cat2").style.visibility="hidden";
+                    document.getElementById("cat3").style.visibility="hidden";
+                    document.getElementById("cat4").style.visibility="hidden";
+            } 
+            function mydog(){
+                    document.getElementById("dog1").style.visibility="visible";
+                    document.getElementById("dog2").style.visibility="visible";
+                    document.getElementById("dog3").style.visibility="visible";
+                    document.getElementById("dog4").style.visibility="visible";
+                    document.getElementById("dog5").style.visibility="visible";
+
+
+                    document.getElementById("cat1").style.visibility="hidden";
+                    document.getElementById("cat2").style.visibility="hidden";
+                    document.getElementById("cat3").style.visibility="hidden";
+                    document.getElementById("cat4").style.visibility="hidden";
+
+            }
+            function mycat(){
+                    document.getElementById("dog1").style.visibility="hidden";
+                    document.getElementById("dog2").style.visibility="hidden";
+                    document.getElementById("dog3").style.visibility="hidden";
+                    document.getElementById("dog4").style.visibility="hidden";
+                    document.getElementById("dog5").style.visibility="hidden";
+
+
+                    document.getElementById("cat1").style.visibility="visible";
+                    document.getElementById("cat2").style.visibility="visible";
+                    document.getElementById("cat3").style.visibility="visible";
+                    document.getElementById("cat4").style.visibility="visible";
+            }
+
+
+            function forprintage(){
+            printage();
+            setInterval(printage,1000);}
+        </script>
+    </head>
+    <body> 
+        <h1 id = "theage" style="text-shadow: 1px 1.5px 1.5px rgba(0, 0, 0, 0.4); font-weight: bold;
+        color: #351c75; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; line-height: 50%;">The Ages</h1>
+        <h1 id = "ment1">생일을 가진 세상의</h1>
+        <h1 id = "ment2">모든 존재들을 위해</h1>
+        <div class="Rectangle-3">
+            <p><input id="textbox" onchange = "forprintage()" type="text" name="birth" placeholder="ex) 2000.01.01" maxlength="10" style="width: 130px; ;font: size 20px;" /></p>
+            <p><input id="textbox1" onkeyup="cosname()" type="text" placeholder="사용자 이름 설정" style="width: 130px; ;font: size 50px;" /></p>
+            <p><button id="myagebtn"onclick="myage()" style="cursor: pointer; ">Myself</button></p>
+            <p><button id="mydogbtn"onclick="mydog()" style="cursor: pointer;">Dog's</button></p>
+            <p><button id="mycatbtn"onclick="mycat()" style="cursor: pointer;">Cat's</button></p>
+        </div>
+
+        <div class="Rectangle-4">
+            <p id = "manage" style="color: black; font-weight: normal;">만 나이는</p>
+        <p id = "myage" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #e69138; font-weight: Bold;">00.00000000</p>
+        <p id = "isit" style="color: black; font-weight: normal;">살!</p>
+        <p id = "born" style="color: #280000; font-weight: normal;">태어난 지</p>
+        <p id = "dat" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #350000; font-weight: Bold;">00000</p>
+        <p id = "dat1" style="color: #350000; font-weight: normal;">일 째 되는 날이에요.</p>
+
+        <p id = "dog1" style="color: #350000; font-weight: normal; ">사람 나이로는</p>
+        <p id = "dog2" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #350000; font-weight: Bold;">00.00000000</p>
+        <p id = "dog3" style="color: #350000; font-weight: normal;">살 이네요.</p>
+        <p id = "dog4" style="color: #350000; font-weight: normal;">*태어난지 54일 미만의 강아지의 나이는 측정되지 않습니다.</p>
+        <p id = "dog5" style="color: #350000; font-weight: normal; ">*반려견의 사람 나이 환산 값은 중형견을 기준으로 계산되었으며, 반려견의 종과 크기에 따라 차이가 날 수 있음을 알려드립니다. </p>
+
+        <p id = "cat1" style="color: #350000; font-weight: normal;">사람 나이로는</p>
+        <p id = "cat2" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #350000; font-weight: Bold;">00.00000000</p>
+        <p id = "cat3" style="color: #350000; font-weight: normal;">살 이네요.</p>
+        <p id = "cat4" style="color: #350000; font-weight: normal; font-size: 10px;">*반려묘의 사람 나이 환산 값은 집고양이를 기준으로 계산되었으며, 반려묘의 종에 따라 차이가 날 수 있음을 알려드립니다. </p>
+
+        <p id = "notice1" style="color: gray; font-weight: normal; font-size: 10px;">*서비스 이용 중 불편한 점 혹은 건의사항은 theage2022@naver.com으로 보내주시기 바랍니다. </p>
+        <p id = "notice2" style="color: gray; font-weight: normal; font-size: 10px;">*나이는 모두 생일 00시00분을 기준으로 계산되었으며, 정확한 생시 생분에 따라 차이가 날 수 있습니다. </p>
+        </div>
+    </body>
+</html>
