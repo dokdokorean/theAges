@@ -8,7 +8,7 @@
 
         <title>The Ages</title>
         <style>
-                body{background-color: #fce5cd; align-items: center;}
+                 body{background-color: #fce5cd; align-items: center;}
                 #theage{float: left; text-align: center; top: 30px;position:relative; color: #351c75; font-weight: lighter; width: 100%; font-size: 50px;}
                 #ment1{ float: left; text-align: center; position: relative; top: 22px; font-size: 15px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
                 #ment2{float: left; text-align: center; position: relative; top: 10px;;  font-size: 15px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
@@ -28,36 +28,49 @@
             #mydogbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
             #mycatbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
 
-            .Rectangle-4 {width: 394px; height: 450px;background-color: #fce5cd;position: absolute; left: 50%; top: 500px; transform: translate(-50%,-50%);}
-            #manage{position: absolute; left: 20px; top: 5px;animation-name: test; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
-            #myage{position: absolute;left: 17px; top: -28px;;letter-spacing: 3px; animation-name: test; animation-duration: 1s; animation-direction: alternate; font-size: 60px;}
+            .Rectangle-4 {width: 360px; height: 450px;background-color: #fce5cd;position: absolute; left: 50%; top: 500px; transform: translate(-50%,-50%);}
+            #manage{position: absolute; left: 0px; top: 5px;animation-name: age1; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
+            #myage{position: absolute;left: 0px; top: -25px;;letter-spacing: 3px; animation-name: age1; animation-duration: 1s; animation-direction: alternate; font-size: 55px;}
             #dogage{position: absolute;top: 320px;left:500px;letter-spacing: 3px;visibility: hidden;}
             #catage{position: absolute;top: 320px;left:500px;letter-spacing: 3px;visibility: hidden;}
 
-            #isit{position: absolute;top: 59px;left: 375px;animation-name: test; animation-duration: 1s; animation-direction: alternate; font-size: 15px}
-            #born{position: absolute;top: 85px;left: 20px;animation-name: test; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
-            #dat{position: absolute;top:50px; left: 15px;animation-name: test; animation-duration: 1s; animation-direction: alternate; font-size: 60px;}
-            #dat1{position: absolute; top: 138px; left: 190px;animation-name: test; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
+            #isit{position: absolute;top: 50px;left: 340px;animation-name: age1; animation-duration: 1s; animation-direction: alternate; font-size: 15px}
+            #born{position: absolute;top: 85px;left: 0px;animation-name: dat1; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
+            #dat{position: absolute;top:60px; left: 0px;animation-name: dat1; animation-duration: 1s; animation-direction: alternate; font-size: 50px;}
+            #dat1{position: absolute; top: 127px; left: 160px;animation-name: dat1; animation-duration: 1s; animation-direction: alternate;font-size: 15px; width: 100%;}
 
-            #dog1{position: absolute; top: 165px;left: 20px;visibility: hidden;font-size: 15px;}
-            #dog2{position: absolute; top: 125px;left: 15px;visibility: hidden; font-size: 60px;}
-            #dog3{position: absolute; top: 230px;left: 20px;visibility: hidden; font-size: 15px;}
-            #dog4{position: absolute; top: 256px;left: 15px;visibility: hidden; font-size: 10px;}
-            #dog5{position: absolute; top: 270px;left: 15px;visibility: hidden; font-size: 10px;}
+            @keyframes age1{
+                from{
+                    left: -1000px;
+                }
+                to{
+                    margin-left: 0;
+                }
+            }
+            @keyframes dat1{
+                from{
+                    left: 1000px;
+                }
+                to{
+                    margin-left: 0px;
+                }
+            }
 
-            #cat1{position: absolute; top: 165px;left:20px;visibility: hidden;font-size: 15px;}
-            #cat2{position: absolute; top: 125px;left: 15px;visibility: hidden; font-size: 60px;}
-            #cat3{position: absolute; top: 230px;left: 20px;visibility: hidden;font-size: 15px;}
-            #cat4{position: absolute; top: 260px;left: 15px;visibility: hidden;}
+            #dog1{position: absolute; top: 160px;left: 0px;visibility: hidden;font-size: 15px;}
+            #dog2{position: absolute; top: 135px;left: 0px;visibility: hidden; font-size: 50px;}
+            #dog3{position: absolute; top: 220px;left: 0px;visibility: hidden; font-size: 15px;}
+            #dog4{position: absolute; top: 256px;left: 0px;visibility: hidden; font-size: 10px;}
+            #dog5{position: absolute; top: 270px;left: 0px;visibility: hidden; font-size: 10px;}
+
+            #cat1{position: absolute; top: 160px;left:0px;visibility: hidden;font-size: 15px;}
+            #cat2{position: absolute; top: 135px;left: 0px;visibility: hidden; font-size: 50px;}
+            #cat3{position: absolute; top: 220px;left: 0px;visibility: hidden;font-size: 15px;}
+            #cat4{position: absolute; top: 256px;left: 0px;visibility: hidden;}
 
             #notice_square{width:100%; height: 40px; background-color: #351c75; position: absolute; top: 400px;left: -420px;}
-            #notice1{position: absolute; top: 440px;left: 5px;}
-            #notice2{position: absolute; top: 415px;left: 5px;}
+            #notice1{position: absolute; top: 440px;left: 0px;}
+            #notice2{position: absolute; top: 415px;left: 0px;}
 
-
-
-            
-                
             
             @media screen and (min-width: 750px){
                 
