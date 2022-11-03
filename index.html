@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Google tag (gtag.js) -->
+         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KD3DGP3NB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -21,6 +21,7 @@
         <title>가장 정확한 나이 계산기-The Ages</title>
         <style>
             /*모바일 모드*/
+            
             body{background-color: #fce5cd; align-items: center;}
                 #theage{float: left; text-align: center; top: 30px;position:relative; color: #351c75; font-weight: lighter; width: 100%; font-size: 50px;}
                 #ment1{ float: left; text-align: center; position: relative; top: 22px; font-size: 15px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
@@ -29,6 +30,10 @@
                 #textbox{position: absolute; top: 11px; left: 10px;}
                 #textbox1{position: absolute; top: 38px; left: 10px;}
                 #darkmode{position: absolute; top: 25px; left:340px;}
+                #sunpng{position: absolute; top: 3.5px; left: 3px; background-size: 100%; width: 17px; height: 17px;}
+                #moonpng{position: absolute; top: 28px; left: 5px; background-size: 100%; width: 14px; height: 14px; visibility: hidden;}
+
+
                 .switch-button {
         position: absolute;
         top: 10.5px;
@@ -146,7 +151,8 @@
                 #ment1{ float: left; text-align: center; position: relative; top: 50px; font-size: 20px; color: #351C75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
                 #ment2{float: left; text-align: center; position: relative; top: 30px;;  font-size: 20px; color: #351C75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
                 #Rectangle-3 {width: 260px; height: 60px; margin: 0 6px 0 0; padding: 8px 62.3px 4px 70.4px; border-radius: 20px; background-color: #F7D7B5;position: absolute; left: 50%; top: 320px; transform: translate(-50%,-50%); }
-
+                #sunpng{position: absolute; top: 3.5px; left: 3px; background-size: 100%; width: 17px; height: 17px;}
+                #moonpng{position: absolute; top: 28px; left: 5px; background-size: 100%; width: 14px; height: 14px; visibility: hidden;}
 
             #darkmode{position: absolute; top: 25px; left:370px;}    
             #textbox{position: absolute;top: 11px;left: 17px;}
@@ -266,15 +272,20 @@
         <h1 id = "ment1">생일을 가진 세상의</h1>
         <h1 id = "ment2">모든 존재들을 위해</h1>
         
+        
         <div id="Rectangle-3">
             <p><input id="textbox" onkeyup = "forprintage()" type="text" name="birth" placeholder="ex) 2000.01.01" maxlength="10" style="width: 130px; ;font: size 20px;" /></p>
             <p><input id="textbox1" onkeyup="cosname()" type="text" placeholder="이름을 입력해주세요" style="width: 130px; ;font: size 50px;" /></p>
             <p><button id="myagebtn"onclick="myage()" style="cursor: pointer; ">Myself</button></p>
             <p><button id="mydogbtn"onclick="mydog()" style="cursor: pointer;">Dog's</button></p>
             <p><button id="mycatbtn"onclick="mycat()" style="cursor: pointer;">Cat's</button></p>
+            
             <label class="switch-button">
                 <input id="darkmode" type="checkbox" onclick="darkmode()">
                 <span class="onoff-switch"></span>
+                <img src="https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png" id="sunpng"/>
+                <img src="https://www.pngall.com/wp-content/uploads/5/Black-Crescent-Moon-PNG-File.png" id="moonpng"/>
+
             </label>
             
         </div>
@@ -316,6 +327,10 @@
                     document.getElementById("isit").style.color='#EDEDED';
                     document.getElementById("born").style.color='#EDEDED';
 
+                    document.getElementById("sunpng").style.visibility="hidden";
+                    document.getElementById("moonpng").style.visibility="visible";
+
+
                     document.getElementById("myagebtn").addEventListener("mouseover", function() {
                     document.getElementById("myagebtn").style.backgroundColor = "#7997FF";
                     document.getElementById("myagebtn").addEventListener("mouseout", function() {
@@ -351,6 +366,10 @@
                     document.getElementById("ment2").style.color='#351C75';
                     document.getElementById("Rectangle-3").style.backgroundColor='#F7D7B5';
                     document.getElementById("Rectangle-4").style.backgroundColor='#FCE5CD';
+
+                    document.getElementById("sunpng").style.visibility="visible";
+                    document.getElementById("moonpng").style.visibility="hidden";
+
 
                     document.getElementById("myagebtn").addEventListener("mouseover", function() {
                     document.getElementById("myagebtn").style.backgroundColor = "#FFC078";
