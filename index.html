@@ -6,25 +6,74 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8419113939152535"crossorigin="anonymous"></script>
         <meta charset="UTF-8">
-        <meta name="description" content="생일을 가진 세상의 모든 존재들을 위한 나이 계산기"/>
-        <meta name="keywords" content="나이계산기,계산기,나이,강아지나이,고양이나이,할머니,할아버지,아버지,어머니,오빠,늙은,어린,애기,아기,강아지,고양이,멍멍이,야옹이,하루에"/>
+        <meta name="description" content="생일을 가진 세상의 모든 존재들을 위한 만 나이 계산기"/>
+        <meta name="keywords" content="나이계산기,계산기,만 나이 계산기,나이,강아지나이,고양이나이,강아지나이계산기,고양이나이계산기"/>
 
-        <title가장 정확한 나이 계산기-The Ages</title>
+        <title>가장 정확한 나이 계산기-The Ages</title>
         <style>
             /*모바일 모드*/
-                body{background-color: #fce5cd; align-items: center;}
+            body{background-color: #fce5cd; align-items: center;}
                 #theage{float: left; text-align: center; top: 30px;position:relative; color: #351c75; font-weight: lighter; width: 100%; font-size: 50px;}
                 #ment1{ float: left; text-align: center; position: relative; top: 22px; font-size: 15px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
                 #ment2{float: left; text-align: center; position: relative; top: 10px;;  font-size: 15px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
-                .Rectangle-3{width: 340px; height: 70px; background-color: #f7d7b5; position: absolute; left: 50%; top: 230px; transform: translate(-50%,-50%); border-radius: 10px; }
+                #Rectangle-3{width: 368px; height: 68px; background-color: #f7d7b5; position: absolute; left: 50%; top: 230px; transform: translate(-50%,-50%); border-radius: 15px; }
                 #textbox{position: absolute; top: 11px; left: 10px;}
                 #textbox1{position: absolute; top: 38px; left: 10px;}
+                #darkmode{position: absolute; top: 25px; left:340px;}
+                .switch-button {
+        position: absolute;
+        top: 10.5px;
+        left: 335px;
+        display: inline-block;
+        width: 23px;
+        height: 49px;
+    }
+    .switch-button input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .onoff-switch {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius:20px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    .onoff-switch:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        left: 4px;
+        bottom: 5px;
+        background-color: #FFC078;
+        -webkit-transition: .5s;
+        transition: .4s;
+        border-radius:20px;
+    }
 
-                #myagebtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px; height: 48px;position: absolute; top: 11px; left: 160px;box-shadow: 2px 2px 2px gray;}
-            #mydogbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px;height: 48px;position: absolute; top: 11px;left: 218px;box-shadow: 2px 2px 2px gray;}
-            #mycatbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px; height: 48px;position: absolute; top: 11px; left: 276px;box-shadow: 2px 2px 2px gray;}
+    .switch-button input:checked + .onoff-switch:before {
+        background-color: #21286C;
+    }
 
-            #myagebtn:hover{color: #fff;background-color: #FFC078;}
+    .switch-button input:checked + .onoff-switch:before {
+        -webkit-transform: translateY(-24px);
+        -ms-transform: translateY(-24px);
+        transform: translateY(-24px);
+    }    
+
+
+                #myagebtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px; height: 48px;position: absolute; top: 10px; left: 160px;box-shadow: 2px 2px 2px gray;}
+            #mydogbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px;height: 48px;position: absolute; top: 10px;left: 218px;box-shadow: 2px 2px 2px gray;}
+            #mycatbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 53px; height: 48px;position: absolute; top: 10px; left: 276px;box-shadow: 2px 2px 2px gray;}
+
+            #myagebtn:hover{color: white;background-color: #FFC078;}
             #mydogbtn:hover{color: #fff;background-color: #FFC078;}
             #mycatbtn:hover{color: #fff;background-color: #FFC078;}
 
@@ -32,16 +81,16 @@
             #mydogbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
             #mycatbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
 
-            .Rectangle-4 {width: 360px; height: 450px;background-color: #fce5cd;position: absolute; left: 50%; top: 500px; transform: translate(-50%,-50%);}/*메인 틀*/
-            #manage{position: absolute; left: 0px; top: 5px;animation-name: age1; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
-            #myage{position: absolute;left: 0px; top: -25px;;letter-spacing: 3px; animation-name: age1; animation-duration: 1s; animation-direction: alternate; font-size: 55px;}
-            #dogage{position: absolute;top: 320px;left:500px;letter-spacing: 3px;visibility: hidden;}
-            #catage{position: absolute;top: 320px;left:500px;letter-spacing: 3px;visibility: hidden;}
+            #Rectangle-4 {width: 360px; height: 450px;background-color: #fce5cd;position: absolute; left: 50%; top: 500px; transform: translate(-50%,-50%);}/*메인 틀*/
+            #manage{position: absolute; left: 0px; top: 18px;color: #350000;animation-name: age1; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
+            #myage{position: absolute;left: 0px; top: -25px;;letter-spacing: 3px; color:#e69138;animation-name: age1; animation-duration: 1s; animation-direction: alternate; font-size: 55px;}
+            #dogage{position: absolute;top: 320px;left:500px;color: #350000;letter-spacing: 3px;visibility: hidden;}
+            #catage{position: absolute;top: 320px;left:500px;color: #350000;letter-spacing: 3px;visibility: hidden;}
 
-            #isit{position: absolute;top: 50px;left: 340px;animation-name: age1; animation-duration: 1s; animation-direction: alternate; font-size: 15px}
-            #born{position: absolute;top: 85px;left: 0px;animation-name: dat1; animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
-            #dat{position: absolute;top:60px; left: 0px;animation-name: dat1; animation-duration: 1s; animation-direction: alternate; font-size: 50px;}
-            #dat1{position: absolute; top: 127px; left: 160px;animation-name: dat1; animation-duration: 1s; animation-direction: alternate;font-size: 15px; width: 150px;}
+            #isit{position: absolute;top: 50px;left: 340px;animation-name: age1; color: #350000;animation-duration: 1s; animation-direction: alternate; font-size: 15px}
+            #born{position: absolute;top: 85px;left: 0px;animation-name: dat1;color: #350000;animation-duration: 1s; animation-direction: alternate;font-size: 15px;}
+            #dat{position: absolute;top:60px; left: 0px;animation-name: dat1;color: #350000; animation-duration: 1s; animation-direction: alternate; font-size: 50px;}
+            #dat1{position: absolute; top: 127px; left: 160px;animation-name: dat1; color: #350000;animation-duration: 1s; animation-direction: alternate;font-size: 15px; width: 150px;}
 
             @keyframes age1{
                 from{
@@ -60,20 +109,19 @@
                 }
             }
 
-            #dog1{position: absolute; top: 160px;left: 0px;visibility: hidden;font-size: 15px;}
-            #dog2{position: absolute; top: 135px;left: 0px;visibility: hidden; font-size: 50px;}
-            #dog3{position: absolute; top: 220px;left: 0px;visibility: hidden; font-size: 15px;}
-            #dog4{position: absolute; top: 256px;left: 0px;visibility: hidden; font-size: 10px;}
-            #dog5{position: absolute; top: 270px;left: 0px;visibility: hidden; font-size: 10px;}
-            #dog6{position: absolute; top: 305px;left: 0px;visibility: hidden; font-size: 10px;}
+            #dog1{position: absolute; top: 160px;left: 0px;visibility: hidden;color: #350000;font-size: 15px;}
+            #dog2{position: absolute; top: 135px;left: 0px;visibility: hidden; color: #350000;font-size: 50px;}
+            #dog3{position: absolute; top: 220px;left: 0px;visibility: hidden; color: #350000;font-size: 15px;}
+            #dog4{position: absolute; top: 256px;left: 0px;visibility: hidden;color: #350000; font-size: 10px;}
+            #dog5{position: absolute; top: 270px;left: 0px;visibility: hidden; color: #350000;font-size: 10px;}
+            #dog6{position: absolute; top: 305px;left: 0px;visibility: hidden;color: #350000; font-size: 10px;}
 
 
-            #cat1{position: absolute; top: 160px;left:0px;visibility: hidden;font-size: 15px;}
-            #cat2{position: absolute; top: 135px;left: 0px;visibility: hidden; font-size: 50px;}
-            #cat3{position: absolute; top: 220px;left: 0px;visibility: hidden;font-size: 15px;}
-            #cat4{position: absolute; top: 256px;left: 0px;visibility: hidden;}
+            #cat1{position: absolute; color: #350000;top: 160px;left:0px;visibility: hidden;font-size: 15px;}
+            #cat2{position: absolute; color: #350000;top: 135px;left: 0px;visibility: hidden; font-size: 50px;}
+            #cat3{position: absolute; color: #350000;top: 220px;left: 0px;visibility: hidden;font-size: 15px;}
+            #cat4{position: absolute; color: #350000;top: 256px;left: 0px;visibility: hidden;}
 
-            #notice_square{width:100%; height: 40px; background-color: #351c75; position: absolute; top: 400px;left: -420px;}
             #notice1{position: absolute; top: 440px;left: 0px;}
             #notice2{position: absolute; top: 415px;left: 0px;}
 
@@ -84,43 +132,94 @@
             
             @media screen and (min-width: 600px){
                 /*데스크톱 모드*/
-                body{background-color: #fce5cd;align-items: center;}
-                #theage{float: left; text-align: center; top: 63px;position:relative; color: #351c75; font-weight: lighter; width: 100%; font-size: 70px;}
-                #ment1{ float: left; text-align: center; position: relative; top: 50px; font-size: 20px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
-                #ment2{float: left; text-align: center; position: relative; top: 30px;;  font-size: 20px; color: #351c75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
-                .Rectangle-3 {width: 235px; height: 70px; margin: 0 6px 0 0; padding: 8px 62.3px 4px 70.4px; border-radius: 20px; background-color: #f7d7b5;position: absolute; left: 50%; top: 320px; transform: translate(-50%,-50%); }
+                body{background-color: #FCE5CD;align-items: center;}
+                #theage{float: left; text-align: center; top: 63px;position:relative; color: #351C75; font-weight: lighter; width: 100%; font-size: 70px;}
+                #ment1{ float: left; text-align: center; position: relative; top: 50px; font-size: 20px; color: #351C75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
+                #ment2{float: left; text-align: center; position: relative; top: 30px;;  font-size: 20px; color: #351C75; font-weight: lighter; line-height: 70%; letter-spacing: 8px;width: 100%;}
+                #Rectangle-3 {width: 260px; height: 60px; margin: 0 6px 0 0; padding: 8px 62.3px 4px 70.4px; border-radius: 20px; background-color: #F7D7B5;position: absolute; left: 50%; top: 320px; transform: translate(-50%,-50%); }
 
-            #textbox{position: absolute;top: 16px;left: 17px;}
-            #textbox1{position: absolute; top: 43px; left: 17px;}
-            #manage{position: absolute; left: 47px; top: 0px;animation-name: age; animation-duration: 1s; animation-direction: alternate; font-size: 22px;}
-            #myage{position: absolute;left: 40px; top: -60px;;letter-spacing: 3px; animation-name: age; animation-duration: 1s; animation-direction: alternate;font-size: 95px;}
+
+            #darkmode{position: absolute; top: 25px; left:370px;}    
+            #textbox{position: absolute;top: 11px;left: 17px;}
+            #textbox1{position: absolute; top: 38px; left: 17px;}
+            #manage{position: absolute; color:#360000;left: 47px; top: 20px;animation-name: age; animation-duration: 1s; animation-direction: alternate; font-size: 22px;}
+            #myage{position: absolute;color:#e69138;left: 40px; top: -60px;;letter-spacing: 3px; animation-name: age; animation-duration: 1s; animation-direction: alternate;font-size: 95px;}
             #dogage{position: absolute;top: 320px;left:460px;letter-spacing: 3px;visibility: hidden;}
             #catage{position: absolute;top: 320px;left:460px;letter-spacing: 3px;visibility: hidden;}
+            .switch-button {
+        position: absolute;
+        top: 11.5px;
+        left: 362px;
+        display: inline-block;
+        width: 23px;
+        height: 49px;
+    }
+    .switch-button input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .onoff-switch {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius:20px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    .onoff-switch:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        left: 4px;
+        bottom: 5px;
+        background-color: #FFC078;
+        -webkit-transition: .5s;
+        transition: .4s;
+        border-radius:20px;
+    }
 
-            #myagebtn{border: 0px; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 16px; left: 160px;box-shadow: 2px 2px 2px gray;}
-            #mydogbtn{border: 0px ; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 16px;left: 228px;box-shadow: 2px 2px 2px gray;}
-            #mycatbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 16px; left: 296px;box-shadow: 2px 2px 2px gray;}
+    .switch-button input:checked + .onoff-switch:before {
+        background-color: #21286C;
+    }
 
-            #myagebtn:hover{color: white;background-color: #FFC078;}
-            #mydogbtn:hover{color: #fff;background-color: #FFC078;}
-            #mycatbtn:hover{color: #fff;background-color: #FFC078;}
+    .switch-button input:checked + .onoff-switch:before {
+        -webkit-transform: translateY(-24px);
+        -ms-transform: translateY(-24px);
+        transform: translateY(-24px);
+    }
+
+
+
+            #myagebtn{border: 0px; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 11px; left: 160px;box-shadow: 2px 2px 2px gray;}
+            #mydogbtn{border: 0px ; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 11px;left: 228px;box-shadow: 2px 2px 2px gray;}
+            #mycatbtn{border: 0px; border-radius: 8px; background-color: #fff; width: 60px; height: 48px;position: absolute; top: 11px; left: 296px;box-shadow: 2px 2px 2px gray;}
 
             #myagebtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;}
             #mydogbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
             #mycatbtn:active{margin-top: 1.5px; margin-left: 1.5px; box-shadow: none;} 
 
-            #dog1{position: absolute; top: 204px;left: 44px;visibility: hidden; font-size: 22px;}
-            #dog2{position: absolute; top: 170px;left: 44px;visibility: hidden; font-size: 70px;}
-            #dog3{position: absolute; top: 260px;left: 470px;visibility: hidden; font-size: 22px;}
-            #dog4{position: absolute; top: 320px;left: 44px;visibility: hidden; font-size: 10px;}
-            #dog5{position: absolute; top: 308px;left: 44px;visibility: hidden; font-size: 10px;}
-            #dog6{position: absolute; top: 345px;left: 44px;visibility: hidden; font-size: 10px;}
+            #myagebtn:hover{color: white;background-color: #FFC078;}
+            #mydogbtn:hover{color: #fff;background-color: #FFC078;}
+            #mycatbtn:hover{color: #fff;background-color: #FFC078;}
+
+            #dog1{position: absolute; color: #350000;top: 204px;left: 44px;visibility: hidden; font-size: 22px;}
+            #dog2{position: absolute; color: #350000;top: 170px;left: 44px;visibility: hidden; font-size: 70px;}
+            #dog3{position: absolute; color: #350000;top: 260px;left: 470px;visibility: hidden; font-size: 22px;}
+            #dog4{position: absolute; color: #350000;top: 320px;left: 44px;visibility: hidden; font-size: 10px;}
+            #dog5{position: absolute; color: #350000;top: 308px;left: 44px;visibility: hidden; font-size: 10px;}
+            #dog6{position: absolute; color: #350000;top: 345px;left: 44px;visibility: hidden; font-size: 10px;}
 
 
-            #cat1{position: absolute; top: 204px;left: 44px;visibility: hidden;font-size: 22px;}
-            #cat2{position: absolute; top: 170px;left: 44px;visibility: hidden; font-size: 70px;}
-            #cat3{position: absolute; top: 260px;left: 460px;visibility: hidden;font-size: 22px;}
-            #cat4{position: absolute; top: 308px;left: 44px;visibility: hidden;}
+            #cat1{position: absolute; color: #350000;top: 204px;left: 44px;visibility: hidden;font-size: 22px;}
+            #cat2{position: absolute; color: #350000;top: 170px;left: 44px;visibility: hidden; font-size: 70px;}
+            #cat3{position: absolute; color: #350000;top: 260px;left: 460px;visibility: hidden;font-size: 22px;}
+            #cat4{position: absolute;color: #350000; top: 308px;left: 44px;visibility: hidden;}
 
             #notice1{position: absolute; top: 423px;left: 115px;}
             #notice2{position: absolute; top: 410px;left: 100px;}
@@ -142,15 +241,142 @@
                 }
             }
 
-            #isit{position: absolute;top: 77px;left: 600px;animation-name: age; animation-duration: 1s; animation-direction: alternate; font-size: 22px}
-            #born{position: absolute;top: 115px;left: 1244px;animation-name: dat; animation-fill-mode: forwards; animation-duration: 1s; animation-direction: alternate; font-size: 22px;}
-            #dat{position: absolute;top: 80px; left: 1244px;animation-name: dat; animation-fill-mode: forwards;  animation-duration: 1s; animation-direction: alternate; font-size: 70px;}
-            #dat1{position: absolute; top: 170px; left: 1450px;animation-name: dat; animation-fill-mode: forwards; animation-duration: 1s; animation-direction: alternate;width: 100%; font-size: 22px;}
+            #isit{position: absolute;top: 77px;left: 600px; color: #350000;animation-name: age; animation-duration: 1s; animation-direction: alternate; font-size: 22px}
+            #born{position: absolute;top: 115px;left: 1244px;animation-name: dat; color: #350000;animation-fill-mode: forwards; animation-duration: 1s; animation-direction: alternate; font-size: 22px;}
+            #dat{position: absolute;top: 80px; left: 1244px;animation-name: dat;color: #350000; animation-fill-mode: forwards;  animation-duration: 1s; animation-direction: alternate; font-size: 70px;}
+            #dat1{position: absolute; top: 170px; left: 1450px;animation-name: dat;color: #350000; animation-fill-mode: forwards; animation-duration: 1s; animation-direction: alternate;width: 200px; font-size: 22px;}
 
-            .Rectangle-4 {width: 660px; height: 450px;background-color: #fce5cd;position: absolute; left: 50%; top: 600px; transform: translate(-50%,-50%); border-top-left-radius: 20px; border-top-right-radius: 20px;}}
+            #Rectangle-4 {width: 660px; height: 450px;background-color: #FCE5CD;position: absolute; left: 50%; top: 600px; transform: translate(-50%,-50%); border-top-left-radius: 20px; border-top-right-radius: 20px;}}
 
         </style>
+        
+    </head>
+    <body> 
+        <h1 id = "theage" style="text-shadow: 1px 1.5px 1.5px rgba(0, 0, 0, 0.4); font-weight: bold;
+         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; line-height: 50%;">The Ages</h1>
+        <h1 id = "ment1">생일을 가진 세상의</h1>
+        <h1 id = "ment2">모든 존재들을 위해</h1>
+        
+        <div id="Rectangle-3">
+            <p><input id="textbox" onkeyup = "forprintage()" type="text" name="birth" placeholder="ex) 2000.01.01" maxlength="10" style="width: 130px; ;font: size 20px;" /></p>
+            <p><input id="textbox1" onkeyup="cosname()" type="text" placeholder="이름을 입력해주세요" style="width: 130px; ;font: size 50px;" /></p>
+            <p><button id="myagebtn"onclick="myage()" style="cursor: pointer; ">Myself</button></p>
+            <p><button id="mydogbtn"onclick="mydog()" style="cursor: pointer;">Dog's</button></p>
+            <p><button id="mycatbtn"onclick="mycat()" style="cursor: pointer;">Cat's</button></p>
+            <label class="switch-button">
+                <input id="darkmode" type="checkbox" onclick="darkmode()">
+                <span class="onoff-switch"></span>
+            </label>
+            
+        </div>
+
+        <div id="Rectangle-4">
+            <a id = "manage" style=" font-weight: normal;">만 나이는</a>
+        <p id = "myage" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal;">00.00000000</p>
+        <p id = "isit" style=" font-weight: normal;">살!</p>
+        <p id = "born" style=" font-weight: normal;">태어난 지</p>
+        <p id = "dat" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: normal;">00000</p>
+        <p id = "dat1" style="font-weight: normal;">일 째 되는 날이에요.</p>
+
+        <p id = "dog1" style=" font-weight: normal; ">사람 나이로는</p>
+        <p id = "dog2" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: normal;">00.00000000</p>
+        <p id = "dog3" style=" font-weight: normal;">살 이네요.</p>
+        <p id = "dog4" style=" font-weight: normal;">*태어난지 54일 미만의 강아지의 나이는 측정되지 않습니다.</p>
+        <p id = "dog5" style="font-weight: normal; ">*반려견의 사람 나이 환산 값은 중형견을 기준으로 계산되었으며, 반려견의 종과 크기에 따라 차이가 날 수 있음을 알려드립니다. </p>
+        <a id = "dog6" style="font-weight: normal;" href="https://www.biorxiv.org/content/10.1101/829192v2">계산 공식 출처:바이오아카이브 논문 6페이지 </a>
+
+        <p id = "cat1" style="font-weight: normal;">사람 나이로는</p>
+        <p id = "cat2" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal;">00.00000000</p>
+        <p id = "cat3" style="font-weight: normal;">살 이네요.</p>
+        <p id = "cat4" style=" font-weight: normal; font-size: 10px;">*반려묘의 사람 나이 환산 값은 집고양이를 기준으로 계산되었으며, 반려묘의 종에 따라 차이가 날 수 있음을 알려드립니다. </p>
+
+        <p id = "notice1" style="color: gray; font-weight: normal; font-size: 10px;">*서비스 이용 중 불편한 점 혹은 건의사항은 theage2022@naver.com으로 보내주시기 바랍니다. </p>
+        <p id = "notice2" style="color: gray; font-weight: normal; font-size: 10px;">*나이는 모두 생일 00시00분을 기준으로 계산되었으며, 정확한 생시 생분에 따라 차이가 날 수 있습니다. </p>
+        </div>
         <script>
+            function darkmode(){
+                if(document.getElementById("darkmode").checked){
+                    document.body.style.backgroundColor="#0E1B33";
+                    document.getElementById("theage").style.color='#EDEDED';
+                    document.getElementById("ment1").style.color='#EDEDED';
+                    document.getElementById("ment2").style.color='#EDEDED';
+                    document.getElementById("Rectangle-3").style.backgroundColor='#21286C';
+                    document.getElementById("Rectangle-4").style.backgroundColor='#0E1B33';
+                    document.getElementById("manage").style.color='#EDEDED';
+                    document.getElementById("myage").style.color='#FFD259';
+                    document.getElementById("isit").style.color='#EDEDED';
+                    document.getElementById("born").style.color='#EDEDED';
+
+                    document.getElementById("myagebtn").addEventListener("mouseover", function() {
+                    document.getElementById("myagebtn").style.backgroundColor = "#7997FF";
+                    document.getElementById("myagebtn").addEventListener("mouseout", function() {
+                    document.getElementById("myagebtn").style.backgroundColor = "white";});});
+
+                    document.getElementById("mydogbtn").addEventListener("mouseover", function() {
+                    document.getElementById("mydogbtn").style.backgroundColor = "#7997FF";
+                    document.getElementById("mydogbtn").addEventListener("mouseout", function() {
+                    document.getElementById("mydogbtn").style.backgroundColor = "white";});});
+
+                    document.getElementById("mycatbtn").addEventListener("mouseover", function() {
+                    document.getElementById("mycatbtn").style.backgroundColor = "#7997FF";
+                    document.getElementById("mycatbtn").addEventListener("mouseout", function() {
+                    document.getElementById("mycatbtn").style.backgroundColor = "white";});});
+
+                    document.getElementById("dat").style.color='#EDEDED';
+                    document.getElementById("dat1").style.color='#EDEDED';
+                    document.getElementById("dog1").style.color='#EDEDED';
+                    document.getElementById("dog2").style.color='#EDEDED';
+                    document.getElementById("dog3").style.color='#EDEDED';
+                    document.getElementById("dog4").style.color='#EDEDED';
+                    document.getElementById("dog5").style.color='#EDEDED';
+                    document.getElementById("dog6").style.color='#EDEDED';
+                    document.getElementById("cat1").style.color='#EDEDED';
+                    document.getElementById("cat2").style.color='#EDEDED';
+                    document.getElementById("cat3").style.color='#EDEDED';
+                    document.getElementById("cat4").style.color='#EDEDED';
+                }
+                else{
+                    document.body.style.backgroundColor="#FCE5CD";
+                    document.getElementById("theage").style.color='#351C75';
+                    document.getElementById("ment1").style.color='#351C75';
+                    document.getElementById("ment2").style.color='#351C75';
+                    document.getElementById("Rectangle-3").style.backgroundColor='#F7D7B5';
+                    document.getElementById("Rectangle-4").style.backgroundColor='#FCE5CD';
+
+                    document.getElementById("myagebtn").addEventListener("mouseover", function() {
+                    document.getElementById("myagebtn").style.backgroundColor = "#FFC078";
+                    document.getElementById("myagebtn").addEventListener("mouseout", function() {
+                    document.getElementById("myagebtn").style.backgroundColor = "white";});});
+
+                    document.getElementById("mydogbtn").addEventListener("mouseover", function() {
+                    document.getElementById("mydogbtn").style.backgroundColor = "#FFC078";
+                    document.getElementById("mydogbtn").addEventListener("mouseout", function() {
+                    document.getElementById("mydogbtn").style.backgroundColor = "white";});});
+
+                    document.getElementById("mycatbtn").addEventListener("mouseover", function() {
+                    document.getElementById("mycatbtn").style.backgroundColor = "#FFC078";
+                    document.getElementById("mycatbtn").addEventListener("mouseout", function() {
+                    document.getElementById("mycatbtn").style.backgroundColor = "white";});});
+
+                    document.getElementById("manage").style.color='#350000';
+                    document.getElementById("myage").style.color='#e69138';
+                    document.getElementById("isit").style.color='#350000';
+                    document.getElementById("born").style.color='#350000';
+                    document.getElementById("dat").style.color='#350000';
+                    document.getElementById("dat1").style.color='#350000';
+                    document.getElementById("dog1").style.color='#350000';
+                    document.getElementById("dog2").style.color='#350000';
+                    document.getElementById("dog3").style.color='#350000';
+                    document.getElementById("dog4").style.color='#350000';
+                    document.getElementById("dog5").style.color='#350000';
+                    document.getElementById("dog6").style.color='#350000';
+                    document.getElementById("cat1").style.color='#350000';
+                    document.getElementById("cat2").style.color='#350000';
+                    document.getElementById("cat3").style.color='#350000';
+                    document.getElementById("cat4").style.color='#350000';
+                }
+            }
+            
             function pushdot(){
                 if(event.keyCode!=8){
                 var dot= document.getElementById('textbox').value;
@@ -319,49 +545,10 @@
                     document.getElementById("cat3").style.visibility="visible";
                     document.getElementById("cat4").style.visibility="visible";
             }
-
-
             function forprintage(){
             pushdot();
             printage();
             setInterval(printage,1000);}
         </script>
-    </head>
-    <body> 
-        <h1 id = "theage" style="text-shadow: 1px 1.5px 1.5px rgba(0, 0, 0, 0.4); font-weight: bold;
-        color: #351c75; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; line-height: 50%;">The Ages</h1>
-        <h1 id = "ment1">생일을 가진 세상의</h1>
-        <h1 id = "ment2">모든 존재들을 위해</h1>
-        <div class="Rectangle-3">
-            <p><input id="textbox" onkeyup = "forprintage()" type="text" name="birth" placeholder="ex) 2000.01.01" maxlength="10" style="width: 130px; ;font: size 20px;" /></p>
-            <p><input id="textbox1" onkeyup="cosname()" type="text" placeholder="이름을 입력해주세요" style="width: 130px; ;font: size 50px;" /></p>
-            <p><button id="myagebtn"onclick="myage()" style="cursor: pointer; ">Myself</button></p>
-            <p><button id="mydogbtn"onclick="mydog()" style="cursor: pointer;">Dog's</button></p>
-            <p><button id="mycatbtn"onclick="mycat()" style="cursor: pointer;">Cat's</button></p>
-        </div>
-
-        <div class="Rectangle-4">
-            <p id = "manage" style="color: black; font-weight: normal;">만 나이는</p>
-        <p id = "myage" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #e69138; font-weight: normal;">00.00000000</p>
-        <p id = "isit" style="color: black; font-weight: normal;">살!</p>
-        <p id = "born" style="color: #280000; font-weight: normal;">태어난 지</p>
-        <p id = "dat" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #350000; font-weight: normal;">00000</p>
-        <p id = "dat1" style="color: #350000; font-weight: normal;">일 째 되는 날이에요.</p>
-
-        <p id = "dog1" style="color: #350000; font-weight: normal; ">사람 나이로는</p>
-        <p id = "dog2" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #350000; font-weight: normal;">00.00000000</p>
-        <p id = "dog3" style="color: #350000; font-weight: normal;">살 이네요.</p>
-        <p id = "dog4" style="color: #350000; font-weight: normal;">*태어난지 54일 미만의 강아지의 나이는 측정되지 않습니다.</p>
-        <p id = "dog5" style="color: #350000; font-weight: normal; ">*반려견의 사람 나이 환산 값은 중형견을 기준으로 계산되었으며, 반려견의 종과 크기에 따라 차이가 날 수 있음을 알려드립니다. </p>
-        <a id = "dog6" style="color: #350000; font-weight: normal;" href="https://www.biorxiv.org/content/10.1101/829192v2">계산 공식 출처:바이오아카이브 논문 6페이지 </a>
-
-        <p id = "cat1" style="color: #350000; font-weight: normal;">사람 나이로는</p>
-        <p id = "cat2" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: #350000; font-weight: normal;">00.00000000</p>
-        <p id = "cat3" style="color: #350000; font-weight: normal;">살 이네요.</p>
-        <p id = "cat4" style="color: #350000; font-weight: normal; font-size: 10px;">*반려묘의 사람 나이 환산 값은 집고양이를 기준으로 계산되었으며, 반려묘의 종에 따라 차이가 날 수 있음을 알려드립니다. </p>
-
-        <p id = "notice1" style="color: gray; font-weight: normal; font-size: 10px;">*서비스 이용 중 불편한 점 혹은 건의사항은 theage2022@naver.com으로 보내주시기 바랍니다. </p>
-        <p id = "notice2" style="color: gray; font-weight: normal; font-size: 10px;">*나이는 모두 생일 00시00분을 기준으로 계산되었으며, 정확한 생시 생분에 따라 차이가 날 수 있습니다. </p>
-        </div>
     </body>
 </html>
