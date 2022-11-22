@@ -137,6 +137,8 @@
 
             #info{position: absolute; top: 20px; left: 340px;animation-name: age1; animation-duration: 1s; animation-direction: alternate; width: auto; height: 20px;}
             #info_sq {position: absolute; top: 50px; left: -260px; width: 340px;height: 200px; margin: 44px 219px 62px 255px; padding: 13px 13px 0 12px; border-radius: 10px; background-color: #FFD8AF;visibility: hidden;}
+            #info_arrow{position: absolute; top: 15px; left: 310px; width: 100px; height:auto; animation-name: age1; animation-duration: 1s;animation-direction: alternate;width: auto; height: 25px;transform:scaleX(-1) rotate(140deg);}
+            #info_ment{position: absolute; top: -7px; left: 250px; width:70px; font-size: 11px;animation-name: age1; animation-duration: 1s;animation-direction: alternate; color: #350000;}
 
 
             #cat1{position: absolute; color: #350000;top: 160px;left:0px;visibility: hidden;font-size: 15px;}
@@ -292,6 +294,8 @@
             #mydogbtn:hover{color: #fff;background-color: #FFC078;}
             #mycatbtn:hover{color: #fff;background-color: #FFC078;}
 
+            #info_arrow{position: absolute; top: 15px; left: 630px; width: 100px; height:auto; animation-name: age; animation-duration: 1s;animation-direction: alternate;width: auto; height: 25px;transform: rotate(140deg);}
+            #info_ment{position: absolute; top: -7px; left: 660px; width:80px; font-size: 13px;animation-name: age; animation-duration: 1s;animation-direction: alternate; color: #350000;}
             #info{position: absolute; top: 20px; left: 600px;animation-name: age; animation-duration: 1s; animation-direction: alternate;width: auto; height: 25px;}
 
             #dog1{position: absolute; color: #350000;top: 204px;left: 44px;visibility: hidden; font-size: 22px;}
@@ -437,6 +441,8 @@
 
         
         <img id="info" src="https://cdn-icons-png.flaticon.com/512/157/157933.png" alt="">
+        <img id="info_arrow" src="https://kr.seaicons.com/wp-content/uploads/2015/10/Arrow-To-icon.png" alt="">
+        <p id="info_ment">더 많은 정보를 알고 싶다면?</p>
 
         <p id="date1" style="font-weight:normal;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">00</p>
         <p id="date2" style="font-weight:normal">년, </p>
@@ -529,7 +535,9 @@
                 document.getElementById("info").addEventListener("mouseover", function() {
                     document.getElementById("info_sq").style.visibility = "visible";
                     document.getElementById("info").addEventListener("mouseout", function() {
-                    document.getElementById("info_sq").style.visibility = "hidden";});});
+                    document.getElementById("info_sq").style.visibility = "hidden";
+                    document.getElementById("info_arrow").style.visibility = "hidden";
+                    document.getElementById("info_ment").style.visibility = "hidden";});});
             }
              new Chart(document.getElementById("bar-chart-horizontal"), {
     type: 'horizontalBar',
@@ -654,6 +662,7 @@ new Chart(document.getElementById("line-chart"), {
                     document.getElementById("bir_d2").style.color='#EDEDED';
                     document.getElementById("bir_d3").style.color='#EDEDED';
                     document.getElementById("bir_d4").style.color='#EDEDED';
+                    document.getElementById("info_ment").style.color="#ededed"
                     document.getElementById("info_sq").style.backgroundColor='#00042C';
                     document.getElementById("content_sq1").style.backgroundColor="#495090";
                 }
@@ -688,7 +697,10 @@ new Chart(document.getElementById("line-chart"), {
                     document.getElementById("info").addEventListener("mouseover", function() {
                     document.getElementById("info_sq").style.visibility = "visible";
                     document.getElementById("info").addEventListener("mouseout", function() {
-                    document.getElementById("info_sq").style.visibility = "hidden";});});
+                    document.getElementById("info_sq").style.visibility = "hidden";
+                    document.getElementById("info_arrow").style.visibility = "hidden";
+                    document.getElementById("info_ment").style.visibility = "hidden";
+                    });});
 
                     document.getElementById("manage").style.color='#350000';
                     document.getElementById("myage").style.color='#e69138';
@@ -727,7 +739,7 @@ new Chart(document.getElementById("line-chart"), {
                     document.getElementById("bir_d3").style.color='black';
                     document.getElementById("bir_d4").style.color='black';
                     document.getElementById("info_sq").style.backgroundColor='#FFD8AF';
-
+                    document.getElementById("info_ment").style.color='#350000';
                     document.getElementById("content_sq1").style.backgroundColor="#FFD79C";
 
                 }
