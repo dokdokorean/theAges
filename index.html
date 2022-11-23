@@ -146,6 +146,9 @@
             #cat3{position: absolute; color: #350000;top: 220px;left: 0px;visibility: hidden;font-size: 15px;}
             #cat4{position: absolute; color: #350000;top: 256px;left: 0px;visibility: hidden;}
 
+            #copybtn_ment{position: absolute; top: 304px; left: 70px; font-size: 13px;}
+            #copybtn1{position: absolute; top: 315px; left: 220px; background-color:#fff; border: none; color: #000; border-radius: 5px;}
+
             #bar-chart-horizontal{position: absolute; top: 360px; left: -10px;}
             #graph_title{position: absolute; color:#696969;top: 320px ;left: 80px;}
             #mois{position: absolute; top: 530px; left: 120px; color: #696969;}
@@ -310,6 +313,9 @@
             #cat3{position: absolute; color: #350000;top: 260px;left: 460px;visibility: hidden;font-size: 22px;}
             #cat4{position: absolute;color: #350000; top: 308px;left: 44px;visibility: hidden;}
 
+            #copybtn_ment{position: absolute; top: 340px; left: 270px; font-size: 13px;}
+            #copybtn1{position: absolute; top: 370px; left: 315px; background-color:#fff; border: none; color: #000; border-radius: 5px;}
+
             #bar-chart-horizontal{position: absolute; top: 430px; left: -10px;}
             #graph_title{position: absolute; color:#696969;top: 390px ;left: 230px;}
             #mois{position: absolute; top: 750px; left: 280px; color: #696969;}
@@ -462,6 +468,10 @@
         <p id = "cat2" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: normal;">00.00000000</p>
         <p id = "cat3" style="font-weight: normal;">살 이네요.</p>
         <p id = "cat4" style=" font-weight: normal; font-size: 10px;">*반려묘의 사람 나이 환산 값은 집고양이를 기준으로 계산되었으며, 반려묘의 종에 따라 차이가 날 수 있음을 알려드립니다. </p>
+        
+        <p id="copybtn_ment">당신의 나이를 공유해보세요!</p>
+        <button id="copybtn1" onclick="copyToClipboard();" title="주소 복사">주소 복사</button>
+
         <div id="info_sq">
             <p id = "kor_age1" style="font-weight: normal;">한국식 나이 계산(세는 나이):</p>
             <p id = "kor_age2" style="font-weight: normal;">00</p>
@@ -531,13 +541,25 @@
         <p id = "notice2" style="color: gray; font-weight: normal; font-size: 10px;">*나이는 모두 생일 00시00분을 기준으로 계산되었으며, 정확한 생시 생분에 따라 차이가 날 수 있습니다. </p>
         </div>
         <script>
+            function copyToClipboard(val) {
+            var t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+            }
+
             window.onload=function(){
-                document.getElementById("info").addEventListener("mouseover", function() {
+                    document.getElementById("info").addEventListener("mouseover", function() {
                     document.getElementById("info_sq").style.visibility = "visible";
                     document.getElementById("info").addEventListener("mouseout", function() {
                     document.getElementById("info_sq").style.visibility = "hidden";
                     document.getElementById("info_arrow").style.visibility = "hidden";
                     document.getElementById("info_ment").style.visibility = "hidden";});});
+                    document.getElementById("copybtn1").addEventListener("click",function(){
+                        copyToClipboard('https://www.theages2022.com/');
+                        alert('주소가 복사되었습니다!');})
             }
              new Chart(document.getElementById("bar-chart-horizontal"), {
     type: 'horizontalBar',
@@ -665,6 +687,7 @@ new Chart(document.getElementById("line-chart"), {
                     document.getElementById("info_ment").style.color="#ededed"
                     document.getElementById("info_sq").style.backgroundColor='#00042C';
                     document.getElementById("content_sq1").style.backgroundColor="#495090";
+                    document.getElementById("copybtn_ment").style.color="#FFF";
                 }
                 else{
                     document.body.style.backgroundColor="#FCE5CD";
@@ -741,6 +764,8 @@ new Chart(document.getElementById("line-chart"), {
                     document.getElementById("info_sq").style.backgroundColor='#FFD8AF';
                     document.getElementById("info_ment").style.color='#350000';
                     document.getElementById("content_sq1").style.backgroundColor="#FFD79C";
+                    document.getElementById("copybtn_ment").style.color="#000";
+
 
                 }
             }
