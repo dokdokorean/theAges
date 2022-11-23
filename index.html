@@ -837,10 +837,10 @@ new Chart(document.getElementById("line-chart"), {
 
                 if(todaytime>nextbir02){
                 const nextbirth=Math.floor((nextbir0-todaytime)/86400000)
-                document.getElementById("bir_d3").innerText=nextbirth;
+                document.getElementById("bir_d3").innerText=nextbirth+1;
                 }else{
                     const nextbirth=Math.floor((nextbir02-todaytime)/86400000)
-                    document.getElementById("bir_d3").innerText=nextbirth;
+                    document.getElementById("bir_d3").innerText=nextbirth+1;
                 }
 
                 
@@ -864,12 +864,6 @@ new Chart(document.getElementById("line-chart"), {
                 document.getElementById("age_sec2").innerText=diff2;
                 document.getElementById("age_min2").innerText=diff3;
                 
-                
-
-
-
-
-
                 var dogage = 16*Math.log(actage)+31
                 var dogage_1=Math.round(dogage*100000000)/100000000.0;
 
