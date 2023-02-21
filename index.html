@@ -663,7 +663,11 @@
 
                 const korage= Math.floor((todaytime-kortime)/31536000000)
 
-                var difdat = 505-(Math.floor(birthdates[0]/4))//윤년계산
+                if (birthdates[0]%4==0){
+                    var difdat = 506-(Math.floor(birthdates[0]/4))//윤년계산
+                }else{
+                    var difdat = 505-(Math.floor(birthdates[0]/4))//윤년계산
+                }
             
                 var yoon = difdat*86400000
 
