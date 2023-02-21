@@ -3,6 +3,7 @@
     <head>
          <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KD3DGP3NB"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -356,12 +357,24 @@
 
 
             #Rectangle-4 {width: 660px; height: 450px;background-color: #FCE5CD;position: absolute; background-color:rgba(255, 255, 255,0);left: 50%; top: 600px; transform: translate(-50%,-50%);}}
-        
+            #stopButton{visibility: hidden;}
+            #startButton{visibility: hidden;}
 
         </style>
-        
     </head>
-    <body> 
+    <body>
+        <script src="https://tistory4.daumcdn.net/tistory/3134841/skin/images/confetti_v2.js"></script>
+
+<style>
+	canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1.1);}
+</style>
+
+<div class="buttonContainer">
+	<button class="canvasBtn" id="stopButton">Stop Confetti</button>
+	<button class="canvasBtn" id="startButton">Drop Confetti</button>	
+</div>
+
+<canvas id="canvas"></canvas>
         <h1 id = "theage" style="text-shadow: 1px 1.5px 1.5px rgba(0, 0, 0, 0.4); font-weight: bold;
          font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; line-height: 50%;">The Ages</h1>
         <h1 id = "ment1">생일을 가진 세상의</h1>
@@ -441,6 +454,12 @@
             <p id = "bir_d4" style="font-weight: normal;">일</p>
         </div>
         <script>
+            function reAction(){
+                $('#startButton').trigger('click');
+                setTimeout(function(){
+                    $('#stopButton').trigger('click');
+                },6000);
+            }
             function copyToClipboard(val) {
             var t = document.createElement("textarea");
             document.body.appendChild(t);
@@ -647,7 +666,7 @@
             else{
                 let date= new Date();
                 var toyear=date.getFullYear();
-                var AAA=birthdates[0]+"/"+birthdates[1]+"/"+birthdates[2]+" 00:00:00"
+                var AAA=birthdates[0]+"/"+birthdates[1]+"/"+birthdates[2]+" 00:00:01"
                 var kor=birthdates[0]+"/"+"1"+"/"+"1"+" 00:00:00";
                 
 
@@ -662,13 +681,12 @@
                 const nextbir02=new Date(nextbir2);
 
                 const korage= Math.floor((todaytime-kortime)/31536000000)
-
                 if (birthdates[0]%4==0){
                     var difdat = 506-(Math.floor(birthdates[0]/4))//윤년계산
                 }else{
                     var difdat = 505-(Math.floor(birthdates[0]/4))//윤년계산
                 }
-            
+                
                 var yoon = difdat*86400000
 
                 const diff = (birthtime - todaytime)*-1-yoon;
@@ -688,6 +706,9 @@
                 
 
                 var actage = Math.round(diff*100000000/31536000000)/100000000.0;//8번째 자리까지 출력
+                if (actage==19.00048200){
+                    reAction();
+                }
 
                 var actdat = Math.floor(diff/86400000)
 
@@ -780,7 +801,6 @@
                 }
             }
             
-            }
             function myage(){
                     document.getElementById("dog1").style.visibility="hidden";
                     document.getElementById("dog2").style.visibility="hidden";
@@ -850,6 +870,7 @@
                     document.getElementById("date4").style.visibility="hidden";
                     document.getElementById("date5").style.visibility="hidden";
                     document.getElementById("date6").style.visibility="hidden";
+            }
             }
             function forprintage(){
             pushdot();
